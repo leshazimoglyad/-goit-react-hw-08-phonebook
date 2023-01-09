@@ -9,7 +9,7 @@ import { ContactList } from 'components/ContactList/ContactList';
 
 //const LS_KEY = 'contacts';
 
-export const Contacts = () => {
+export  default  function Contacts ()  {
   const contacts = useSelector(state => state.contacts);
   console.log(contacts);
 
