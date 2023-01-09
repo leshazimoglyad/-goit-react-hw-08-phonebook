@@ -1,18 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { filterContact } from 'redux/phonebookSlice';
-import { Input, P } from 'components/Style/Element.styled';
+import { Input } from 'components/Style/Element.styled';
+import { getFilter, setFilter } from 'redux/filter/filterSlice';
+import { H2 } from 'components/Title/Title';
 
 export const Filter = () => {
-  const filter = useSelector(state => state.filter);
+  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
   const onChange = event => {
-    dispatch(filterContact(event.currentTarget.value));
+    dispatch(setFilter(event.currentTarget.value));
   };
 
   return (
     <div>
-      <P>Find contacts by name</P>
+      <H2 title="Find contacts by name" />
       <Input
         type="text"
         name="filter"
